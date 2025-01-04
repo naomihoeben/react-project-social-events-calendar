@@ -1,0 +1,320 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Elle Woods",
+      "image": "/img/users/ellewoods.webp"
+    },
+    {
+      "id": "2",
+      "name": "Bruiser Woods",
+      "image": "https://i.pinimg.com/564x/c2/0f/0e/c20f0ec66a3127ac7c3010412fb38cc1.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Paulette Bonafonté",
+      "image": "https://i.ytimg.com/vi/cv2NO6JeSRU/maxresdefault.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Vivian Kensington",
+      "image": "https://fashionjournal.com.au/wp-content/uploads/2020/04/fashion-journal-tv-character-style-icon-embed.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Emmett Richmond",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQgv_XP0Cq1l7ODchpz7xsyAR1tKVmR11T4g&s"
+    },
+    {
+      "id": "6",
+      "name": "Warner Huntington III",
+      "image": "/img/users/warner.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Brooke Taylor-Windham",
+      "image": "https://people.com/thmb/d55deloh-bqbWQ0s3_Pu0wa8bi8=/4000x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(749x0:751x2)/legally-blonde-brooke-taylor-windham-070924-478b591a52e74446804d18aebc5e8b68.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Professor Stromwell",
+      "image": "https://imgix.bustle.com/uploads/image/2018/6/22/c9659d76-ad02-4765-9ccb-6906ab392c9a-stromwell.png?w=1200&h=630&fit=crop&crop=faces&fm=jpg"
+    },
+    {
+      "id": "9",
+      "name": "David Kidney",
+      "image": "https://pbs.twimg.com/media/GSXZetSWMAABlfF.jpg"
+    },
+    {
+      "id": "10",
+      "name": "Professor Callahan",
+      "image": "https://hips.hearstapps.com/ghk.h-cdn.co/assets/16/28/480x458/victor-garber-professor-callahan.jpg?resize=980:*"
+    },
+    {
+      "id": "11",
+      "name": "UPS Guy",
+      "image": "/img/users/upsguy.jpeg"
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "createdBy": 3,
+      "title": "Manicure & Pedicure Sessions",
+      "description": "Relax and rejuvenate with a manicure and pedicure.",
+      "image": "https://decider.com/wp-content/uploads/2022/12/Legally-Blonde.jpg?quality=80&strip=all&w=646&h=430&crop=1",
+      "categoryIds": [
+        "1"
+      ],
+      "location": "Paulette's Nail Spa",
+      "startTime": "2001-03-10T14:00",
+      "endTime": "2001-03-10T17:00"
+    },
+    {
+      "id": "2",
+      "createdBy": 4,
+      "title": "Law School Study Group",
+      "description": "Prep for the next big exam with friends.",
+      "image": "https://imgix.ranker.com/user_node_img/50123/1002457514/original/1002457514-photo-u1?auto=format&q=60&fit=crop&fm=pjpg&dpr=2&w=355",
+      "categoryIds": [
+        "2"
+      ],
+      "location": "Harvard Law Library",
+      "startTime": "2001-03-15T13:00",
+      "endTime": "2001-03-15T15:00"
+    },
+    {
+      "id": "3",
+      "createdBy": 4,
+      "title": "Costume Party (no really!)",
+      "description": "Dress in your best pink attire and party!",
+      "image": "https://ew.com/thmb/QpyoVVKYuvEK1UxQrIjgA-hSHXk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/bunny-outfit-6d54fa06b83c46c8ad72365955e2d765.jpg",
+      "categoryIds": [
+        "3"
+      ],
+      "location": "45 Dunstan Street",
+      "startTime": "2001-03-09T18:00",
+      "endTime": "2001-03-09T20:00"
+    },
+    {
+      "id": "4",
+      "createdBy": 1,
+      "title": "Dress Shopping",
+      "description": "Pick out the perfect outfit for your next event.",
+      "image": "https://i.ytimg.com/vi/0cgbqOq6tZw/maxresdefault.jpg",
+      "categoryIds": [
+        "1",
+        "4"
+      ],
+      "location": "Rodeo Drive",
+      "startTime": "2001-03-20T11:00",
+      "endTime": "2001-03-20T13:30"
+    },
+    {
+      "id": "5",
+      "createdBy": 1,
+      "title": "Picnic in the Park",
+      "description": "Enjoy the warm sun and the view!",
+      "image": "https://i1.wp.com/www.womensrepublic.net/wp-content/uploads/2021/07/legally-blonde.jpeg?fit=600%2C300&ssl=1",
+      "categoryIds": [
+        "3",
+        "4"
+      ],
+      "location": "The Arnold Arboretum",
+      "startTime": "2001-04-15T11:00",
+      "endTime": "2001-04-15T14:00"
+    },
+    {
+      "id": "6",
+      "createdBy": 1,
+      "title": "Bend-and-Snap Lessons",
+      "description": "Master the art of the bend-and-snap!",
+      "image": "https://pyxis.nymag.com/v1/imgs/7bc/6ae/e113ebb24e1c0dcb0b7f3ceb54df1a7690-legally-blonde-bend-and-snap-lede.2x.rsocial.w600.jpg",
+      "categoryIds": [
+        "1",
+        "3"
+      ],
+      "location": "Paulette's Nail Spa",
+      "startTime": "2001-04-06T16:00",
+      "endTime": "2001-04-06T17:00"
+    },
+    {
+      "id": "7",
+      "createdBy": 3,
+      "title": "Scrapbooking & Vision Board Workshop",
+      "description": "Unleash your creativity with scrapbooking.",
+      "image": "https://i.pinimg.com/originals/08/cc/d3/08ccd3b2d102ebb88df357c501a36254.jpg",
+      "categoryIds": [
+        "3",
+        "4"
+      ],
+      "location": "Delta Nu Sorority House",
+      "startTime": "2001-04-20T10:00",
+      "endTime": "2001-04-20T12:30"
+    },
+    {
+      "id": "8",
+      "createdBy": 9,
+      "title": "Networking Mixer",
+      "description": "Connect with others and share ideas.",
+      "image": "https://d32qys9a6wm9no.cloudfront.net/images/movies/backdrop/ef/1bd06142a55ea34e37274728bb773643_706x397.jpg?t=1646838150",
+      "categoryIds": [
+        "2",
+        "3"
+      ],
+      "location": "Delta Nu Sorority House",
+      "startTime": "2001-03-25T17:00",
+      "endTime": "2001-03-25T19:30"
+    },
+    {
+      "id": "9",
+      "createdBy": 6,
+      "title": "Date Night with Warner",
+      "description": "A cozy evening out with Warner. Right?",
+      "image": "https://i.ytimg.com/vi/LashJCjM1lY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCC2_yUlnVPPkbAbuW5ixa5h0ECeQ",
+      "categoryIds": [
+        "3",
+        "4"
+      ],
+      "location": "The Ritz Boston",
+      "startTime": "2001-05-01T18:00",
+      "endTime": "2001-05-01T21:00"
+    },
+    {
+      "id": "10",
+      "createdBy": 1,
+      "title": "Study With Friends",
+      "description": "Help each other study and ace your LSAT!",
+      "image": "https://images.squarespace-cdn.com/content/v1/56a42d085dc6de5c96fe5abd/1481831398400-ZY2SB5M1QKRX1CY4EJ6W/image-asset.png",
+      "categoryIds": [
+        "2"
+      ],
+      "location": "Delta Nu Sorority House",
+      "startTime": "2001-05-01T19:00",
+      "endTime": "2001-05-01T21:00"
+    },
+    {
+      "id": "11",
+      "createdBy": 10,
+      "title": "Court Session",
+      "description": "Make sure to win that trial.",
+      "image": "https://ew.com/thmb/4aeHt40lQxQmJPzvNQjS8D7sMso=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/internship-outfit-d9de3db3fe9b4fbc83acb51fabdd8b5f.jpg",
+      "categoryIds": [
+        "2"
+      ],
+      "location": "Orange County Courthouse",
+      "startTime": "2001-05-01T08:00",
+      "endTime": "2001-05-01T10:30"
+    },
+    {
+      "id": "12",
+      "createdBy": 8,
+      "title": "Graduation Day",
+      "description": "Celebrate the successful completion of Harvard Law School!",
+      "image": "https://img.freepik.com/premium-photo/group-girls-wearing-pink-graduation-caps-gowns-with-words_1103290-23775.jpg",
+      "categoryIds": [
+        "2",
+        "3"
+      ],
+      "location": "Harvard Law Grand Hall",
+      "startTime": "2001-06-01T14:00",
+      "endTime": "2001-06-01T16:30"
+    },
+    {
+      "id": "13",
+      "createdBy": 1,
+      "title": "High School Reunion",
+      "description": "Invite your dearest friends to Harvard Law.",
+      "image": "https://m.media-amazon.com/images/M/MV5BMTMwNjI2MDM3OF5BMl5BanBnXkFtZTcwMTg0NDk0NA@@._V1_QL75_UX1230_.jpg",
+      "categoryIds": [
+        "3"
+      ],
+      "location": "Harvard Law Garden",
+      "startTime": "2001-07-01T15:00",
+      "endTime": "2001-07-01T17:30"
+    },
+    {
+      "id": "14",
+      "createdBy": 2,
+      "title": "Movie Night",
+      "description": "Watching Beverly Hills Chihuahua with friends and snacks.",
+      "image": "/img/events/dogsmovie.png",
+      "categoryIds": [
+        "3"
+      ],
+      "location": "Delta Nu Sorority House",
+      "startTime": "2001-08-01T20:00",
+      "endTime": "2001-08-01T22:30"
+    },
+    {
+      "id": "15",
+      "createdBy": 1,
+      "title": "Visit Brooke and Bring Care Package at Prison",
+      "description": "Deliver essentials and spend quality time supporting Brooke.",
+      "image": "/img/events/prison.png",
+      "categoryIds": [
+        "4"
+      ],
+      "location": "Boston Women's Prison",
+      "startTime": "2001-08-05T10:00",
+      "endTime": "2001-08-05T13:00"
+    },
+    {
+      "id": "16",
+      "createdBy": 8,
+      "title": "Friendly Introduction with New Classmates",
+      "description": "Meet your classmates and make new friends during orientation.",
+      "image": "/img/events/introductions.png",
+      "categoryIds": [
+        "2"
+      ],
+      "location": "Harvard Law Garden",
+      "startTime": "2001-09-01T09:00",
+      "endTime": "2001-09-01T11:30"
+    },
+    {
+      "id": "17",
+      "createdBy": 3,
+      "title": "Trip to Get Paulette's Dog",
+      "description": "Join Paulette on a journey to rescue her beloved dog from Dewey.",
+      "image": "/img/events/getdog.png",
+      "categoryIds": [
+        "3"
+      ],
+      "location": "Dewey's Residence",
+      "startTime": "2001-09-10T10:00",
+      "endTime": "2001-09-10T13:00"
+    },
+    {
+      "id": "18",
+      "createdBy": 10,
+      "title": "Lead First Trial",
+      "description": "Win for Brooke and prove her innocence in court.",
+      "image": "https://m.media-amazon.com/images/M/MV5BMzYwNTUyMjk4N15BMl5BanBnXkFtZTcwMjg0NDk0NA@@._V1_QL75_UX1230_.jpg",
+      "categoryIds": [
+        "2"
+      ],
+      "location": "Orange County Courthouse",
+      "startTime": "2001-10-01T10:00",
+      "endTime": "2001-10-01T13:30"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Beauty",
+      "id": "1"
+    },
+    {
+      "name": "Education",
+      "id": "2"
+    },
+    {
+      "name": "Social Events",
+      "id": "3"
+    },
+    {
+      "name": "Relaxation",
+      "id": "4"
+    }
+  ]
+}
