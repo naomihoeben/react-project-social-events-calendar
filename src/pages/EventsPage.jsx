@@ -124,7 +124,15 @@ export const EventsPage = () => {
 									{event.title}
 								</Text>
 								<Text fontSize="sm" color="gray.500">
-									{event.creator.name || "Creator not found"}
+									{`${new Date(event.startTime).getDate()}-${new Date(event.startTime).getMonth() + 1}-${new Date(
+										event.startTime
+									).getFullYear()}, ${new Date(event.startTime).toLocaleTimeString("en-GB", {
+										hour: "2-digit",
+										minute: "2-digit",
+									})} - ${new Date(event.endTime).toLocaleTimeString("en-GB", {
+										hour: "2-digit",
+										minute: "2-digit",
+									})}`}
 								</Text>
 								<Text fontSize="md">{event.description}</Text>
 								<Text mt={4} fontWeight="bold">
