@@ -37,7 +37,7 @@ export const EventFormFields = ({
 			<FormLabel>Image URL</FormLabel>
 			<Input name="image" value={formData.image} onChange={handleChange} placeholder="Enter image URL" />
 		</FormControl>
-		<SimpleGrid columns={2} spacing={4} mb={4}>
+		<SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} mb={4}>
 			<FormControl>
 				<FormLabel>Start Time</FormLabel>
 				<Input
@@ -74,7 +74,7 @@ export const EventFormFields = ({
 			<CheckboxGroup value={formData.categoryIds} onChange={(selected) => handleCategoryChange(selected)}>
 				<Stack spacing={2}>
 					{categories.map((category) => (
-						<Checkbox key={category.id} value={category.id}>
+						<Checkbox key={category.id} value={String(category.id)}>
 							{category.name}
 						</Checkbox>
 					))}

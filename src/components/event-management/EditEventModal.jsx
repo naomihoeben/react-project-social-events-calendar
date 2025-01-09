@@ -47,12 +47,26 @@ export const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
 	};
 
 	const handleCategoryChange = (selectedCategories) => {
-		setFormData((prev) => ({ ...prev, categoryIds: selectedCategories }));
+		setFormData((prev) => ({ ...prev, categoryIds: selectedCategories.map(String) }));
 	};
 
 	const handleSubmit = async () => {
 		try {
-			await onSave(formData);
+			const response = await fetch(`http://localhost:3000/events/${formData.id}`, {
+				method: "PUT",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(formData),
+			});
+
+			if (!response.ok) throw new Error("Failed to save updated event on the server");
+
+			const updatedEventResponse = await fetch(`http://localhost:3000/events/${formData.id}`);
+			if (!updatedEventResponse.ok) throw new Error("Failed to fetch updated event data from the server");
+
+			const updatedEvent = await updatedEventResponse.json();
+
+			await onSave(updatedEvent);
+
 			toast({
 				title: "Event updated successfully!",
 				status: "success",
@@ -88,11 +102,11 @@ export const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
 					/>
 				</ModalBody>
 				<ModalFooter>
-					<Button colorScheme="blue" onClick={handleSubmit}>
-						Save Changes
-					</Button>
-					<Button variant="ghost" onClick={onClose} ml={3}>
+					<Button variant="ghost" onClick={onClose} mr={2}>
 						Cancel
+					</Button>
+					<Button colorScheme="yellow" onClick={handleSubmit}>
+						Save Changes
 					</Button>
 				</ModalFooter>
 			</ModalContent>

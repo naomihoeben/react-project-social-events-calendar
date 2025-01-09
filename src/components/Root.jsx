@@ -13,35 +13,22 @@ export const Root = () => {
 		<Box
 			maxWidth="1300px"
 			mx="auto"
-			p={4}
-			bg="pink.300"
-			boxShadow="lg"
-			borderRadius="lg"
-			position="relative"
-			_before={{
-				// Just for fun: some dotted lines around the box
-				content: '""',
-				position: "absolute",
-				top: "-8px",
-				bottom: "-10px",
-				left: "-12px",
-				right: "-15px",
-				border: "20px dotted white",
-				borderRadius: "lg",
-				zIndex: -1,
-			}}
+			borderLeft={["5px dotted white", "15px dotted white"]}
+			borderRight={["5px dotted white", "15px dotted white"]}
 		>
-			<Header />
-			<Navigation />
-			<Box mb={10}>
-				<Routes>
-					<Route path="/" element={<EventsPage />} />
-					<Route path="event/:eventId" element={<EventPage />} />
-					<Route path="add-event" element={<AddEventForm />} />
-					<Route path="*" element={<h1>404 - Page Not Found</h1>} />
-				</Routes>
+			<Box bg="pink.300" boxShadow="lg" borderRadius="lg" position="relative" overflow="hidden">
+				<Header />
+				<Navigation />
+				<Box mb={10}>
+					<Routes>
+						<Route path="/" element={<EventsPage />} />
+						<Route path="event/:eventId" element={<EventPage />} />
+						<Route path="add-event" element={<AddEventForm />} />
+						<Route path="*" element={<h1>404 - Page Not Found</h1>} />
+					</Routes>
+				</Box>
+				<Footer />
 			</Box>
-			<Footer />
 		</Box>
 	);
 };

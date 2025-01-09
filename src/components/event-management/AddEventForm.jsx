@@ -55,7 +55,7 @@ export const AddEventForm = () => {
 
 	// Handle category checkbox selection
 	const handleCategoryChange = (selected) => {
-		setFormData({ ...formData, categoryIds: selected });
+		setFormData({ ...formData, categoryIds: selected.map(String) });
 	};
 
 	// Submit form data
@@ -68,7 +68,7 @@ export const AddEventForm = () => {
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
 					...formData,
-					categoryIds: formData.categoryIds.map((id) => parseInt(id, 10)),
+					categoryIds: formData.categoryIds.map(String),
 				}),
 			});
 
@@ -94,9 +94,14 @@ export const AddEventForm = () => {
 					creators={creators}
 					categories={categories}
 				/>
-				<Button type="submit" colorScheme="teal" mt={4}>
-					Add Event
-				</Button>
+				<Box display="flex" justifyContent="flex-end" mt={4}>
+					<Button variant="ghost" onClick={() => navigate("/")} mr={2}>
+						Cancel
+					</Button>
+					<Button type="submit" colorScheme="yellow" variant="solid">
+						Add Event
+					</Button>
+				</Box>
 			</form>
 		</Box>
 	);

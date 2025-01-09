@@ -12,7 +12,7 @@ import theme from "./theme/theme";
 
 const router = createBrowserRouter([
 	{
-		path: "/", // ik had hier veel gerommel of het nu "/" of "*" moest zijn, dat begrijp ik nog niet helemaal.
+		path: "/",
 		element: <Root />,
 		children: [
 			{ path: "/", element: <EventsPage /> },

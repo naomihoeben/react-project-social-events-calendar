@@ -16,9 +16,8 @@ export const Header = () => {
 			py={8}
 			px={4}
 			textAlign="center"
-			borderRadius="lg"
 			boxShadow="lg"
-			mb={2}
+			mb={0}
 		>
 			<Heading
 				as="h1"

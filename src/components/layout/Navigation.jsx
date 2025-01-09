@@ -4,8 +4,8 @@ import { Box, Button, Flex } from "@chakra-ui/react";
 
 export const Navigation = () => {
 	return (
-		<Box bg="brand.500" p={3} mb={4} borderRadius="lg" boxShadow="md">
-			<Flex justify={["center", "space-around"]} flexDirection={["column", "row"]} gap={4}>
+		<Box bg="brand.500" p={3} mb={4} boxShadow="md">
+			<Flex justify={["center", "space-evenly"]} flexDirection={["column", "row"]} gap={4}>
 				<Button as={Link} to="/" colorScheme="yellow" variant="solid">
 					Explore Events
 				</Button>

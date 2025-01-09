@@ -48,19 +48,8 @@ export const EventPage = () => {
 		fetchEventDetails();
 	}, [eventId]);
 
-	const handleSave = async (updatedEvent) => {
-		const response = await fetch(`http://localhost:3000/events/${eventId}`, {
-			method: "PUT",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(updatedEvent),
-		});
-
-		if (response.ok) {
-			const data = await response.json();
-			setEvent(data);
-		} else {
-			throw new Error("Failed to update event");
-		}
+	const handleSave = (updatedEvent) => {
+		setEvent(updatedEvent);
 	};
 
 	const formatDateTime = (startTime, endTime) => {
@@ -77,10 +66,12 @@ export const EventPage = () => {
 	const placeholderEventImage = "https://upload.wikimedia.org/wikipedia/en/2/27/Bliss_%28Windows_XP%29.png";
 
 	return (
-		<Box p={4}>
+		<Box bg="white" borderRadius="lg" boxShadow="md" p={6} mx="auto" maxWidth="800px">
 			<Stack spacing={6}>
 				{/* Event title */}
-				<Heading textAlign="center">{event.title || "Title not found"}</Heading>
+				<Heading textAlign="center" color="RebeccaPurple">
+					{event.title || "Title not found"}
+				</Heading>
 				<Stack direction={isMobile ? "column" : "row"} spacing={6} alignItems={isMobile ? "flex-start" : "center"}>
 					{/* Grouped content */}
 					<Stack flex="1" spacing={4}>
@@ -106,7 +97,11 @@ export const EventPage = () => {
 							<Button colorScheme="blue" onClick={onOpen}>
 								Edit Event
 							</Button>
-							<DeleteButton eventId={eventId} onDelete={() => console.log("Event deleted!")} />
+							<DeleteButton
+								eventId={eventId}
+								eventTitle={event.title || `this event`}
+								onDelete={() => console.log("Event deleted!")}
+							/>
 						</Stack>
 					</Stack>
 					{/* Event image */}

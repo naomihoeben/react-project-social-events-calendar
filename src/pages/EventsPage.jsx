@@ -18,40 +18,20 @@ export const EventsPage = () => {
 			try {
 				const eventsResponse = await fetch("http://localhost:3000/events");
 				const categoriesResponse = await fetch("http://localhost:3000/categories");
-
 				if (!eventsResponse.ok || !categoriesResponse.ok) {
 					throw new Error("Failed to fetch data");
 				}
-
 				const eventsData = await eventsResponse.json();
 				const categoriesData = await categoriesResponse.json();
-
-				// Fallback for missing creator details
-				const updatedEvents = await Promise.all(
-					eventsData.map(async (event) => {
-						if (event.createdBy) {
-							try {
-								const creatorResponse = await fetch(`http://localhost:3000/users/${event.createdBy}`);
-								if (!creatorResponse.ok) throw new Error();
-								const creatorData = await creatorResponse.json();
-								return { ...event, creator: creatorData };
-							} catch {
-								return { ...event, creator: { name: "Creator not found", image: "" } };
-							}
-						}
-						return { ...event, creator: { name: "Creator not found", image: "" } };
-					})
-				);
-
-				setEvents(updatedEvents);
+				setEvents(eventsData);
 				setCategories(categoriesData);
 			} catch (err) {
-				setError(err.message);
+				setError("Oops! We could not load the events. Please check your internet connection or try again later.");
+				console.error("Error fetching data:", err);
 			} finally {
 				setLoading(false);
 			}
 		};
-
 		fetchData();
 	}, []);
 
@@ -71,27 +51,34 @@ export const EventsPage = () => {
 	return (
 		<Flex direction={{ base: "column", lg: "row" }} gap={6} p={4}>
 			<Box width={{ base: "100%", lg: "25%" }}>
-				<Heading mb={4} size="md">
-					Search & Filter
-				</Heading>
-				<Input
-					placeholder="Search events..."
-					value={searchQuery}
-					onChange={(e) => setSearchQuery(e.target.value)}
-					mb={4}
-					bg="white"
-					border="2px solid"
-					borderColor="brand.500"
-				/>
-				<CheckboxGroup value={selectedCategories} onChange={(values) => setSelectedCategories(values)}>
-					<Stack direction="column" spacing={2}>
-						{categories.map((category) => (
-							<Checkbox key={category.id} value={category.id.toString()}>
-								{category.name}
-							</Checkbox>
-						))}
-					</Stack>
-				</CheckboxGroup>
+				<Heading mb={4}>Search & Filter</Heading>
+				<Box bg="white" borderRadius="md" boxShadow="md" p={4} alignSelf="flex-start">
+					<Text fontSize="sm" fontWeight="semibold" mb={4}>
+						Search by keyword:
+					</Text>{" "}
+					<Input
+						placeholder="Type a keyword..."
+						value={searchQuery}
+						onChange={(e) => setSearchQuery(e.target.value)}
+						mb={6}
+						bg="gray.50"
+						border="1px solid"
+						borderColor="gray.300"
+						_focus={{ borderColor: "brand.500", boxShadow: "0 0 0 1px #FF7FAA" }}
+					/>
+					<Text fontSize="sm" fontWeight="semibold" mb={4}>
+						Filter by category:
+					</Text>{" "}
+					<CheckboxGroup value={selectedCategories} onChange={(values) => setSelectedCategories(values)}>
+						<Stack direction="column" spacing={3}>
+							{categories.map((category) => (
+								<Checkbox key={category.id} value={category.id.toString()} colorScheme="pink">
+									{category.name}
+								</Checkbox>
+							))}
+						</Stack>
+					</CheckboxGroup>
+				</Box>
 			</Box>
 			<Box flex="1">
 				<Heading mb={4}>List of Events</Heading>
@@ -124,15 +111,15 @@ export const EventsPage = () => {
 									{event.title}
 								</Text>
 								<Text fontSize="sm" color="gray.500">
-									{`${new Date(event.startTime).getDate()}-${new Date(event.startTime).getMonth() + 1}-${new Date(
-										event.startTime
-									).getFullYear()}, ${new Date(event.startTime).toLocaleTimeString("en-GB", {
-										hour: "2-digit",
-										minute: "2-digit",
-									})} - ${new Date(event.endTime).toLocaleTimeString("en-GB", {
-										hour: "2-digit",
-										minute: "2-digit",
-									})}`}
+									{event.startTime && event.endTime
+										? `${new Date(event.startTime).toLocaleDateString()} ${new Date(event.startTime).toLocaleTimeString(
+												"en-GB",
+												{ hour: "2-digit", minute: "2-digit" }
+										  )} - ${new Date(event.endTime).toLocaleTimeString("en-GB", {
+												hour: "2-digit",
+												minute: "2-digit",
+										  })}`
+										: "Date & time not specified"}
 								</Text>
 								<Text fontSize="md">{event.description}</Text>
 								<Text mt={4} fontWeight="bold">
